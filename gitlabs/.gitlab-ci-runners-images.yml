@@ -1,0 +1,17 @@
+# choosing runners and choosing custom docker image 
+
+image: alpine  # global place to define image 
+
+build:
+   # tags:
+   #   - myrunnre
+    stage: build
+    script:
+        - echo "i am alpine image"
+        - cat /etc/os-release
+deploy:
+    image: busybox
+    stage: deploy
+    script:
+        - echo "i am deploy stage"
+        - cat /etc/os-release
