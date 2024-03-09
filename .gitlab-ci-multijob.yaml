@@ -1,0 +1,12 @@
+# defining jobs 
+# by default jobs will run parallel 
+
+first-job:
+  script:
+    - echo "hello world"
+    - echo "default stage is test"
+  
+python-code:
+  script:
+    - echo "running python code"
+    - python3 hello.py 
