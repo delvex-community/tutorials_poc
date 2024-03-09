@@ -1,0 +1,22 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build-project
+  - test-project
+  - deploy-project
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build-project
+  script:
+    - echo "Compiling the code..."
+    - echo "building project with some tools "
+
+test-job:       # This job runs in the build stage, which runs first.
+  stage: test-project
+  script:
+    - echo "After previous stage completion i am running myself "
+    - echo "testing build outcomes with testing tools"
+
+deploy-job:       # This job runs in the build stage, which runs first.
+  stage: deploy-project
+  script:
+    - echo "After previous stage completion i am running myself "
+    - echo "deploy after outcomes with deployment tools in QA or Prod Environment"
