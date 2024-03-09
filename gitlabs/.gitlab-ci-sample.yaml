@@ -1,0 +1,6 @@
+# running sample job
+
+first-job: # job name 
+  script:
+    - echo "hello world"
+    - echo "default stage is test"
