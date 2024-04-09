@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  spark-master:
+    image: delvexpoc/spark:3.5.1-jdk17-arm
+    build:
+      context: .
+      dockerfile: spark351_nohadoop.dockerfile
+    container_name: spark-master
+    environment:
+      - SPARK_WORKLOAD=master
+    ports:
+      - 8080:8080
+      - 7077:7077
+
+  spark-worker1:
+    image: delvexpoc/spark:3.5.1-jdk17-arm
+    container_name: spark-worker1
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_WORKLOAD=worker
+      - SPARK_MASTER=spark://spark-master:7077
+
