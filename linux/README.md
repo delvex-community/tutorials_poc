@@ -1,0 +1,1 @@
+# Info about Shell in linux kernel 
